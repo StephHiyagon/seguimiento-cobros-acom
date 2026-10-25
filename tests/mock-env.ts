@@ -1,0 +1,6 @@
+import{DatabaseSync}from'node:sqlite';
+import{readFileSync}from'node:fs';
+const sql=new DatabaseSync(':memory:');sql.exec(readFileSync('drizzle/0000_secret_maginty.sql','utf8'));
+class Statement{constructor(public query:string,public args:unknown[]=[]){ }bind(...a:unknown[]){return new Statement(this.query,a);}async first(){return sql.prepare(this.query).get(...this.args as never[])??null;}async all(){return{results:sql.prepare(this.query).all(...this.args as never[])};}async run(){const r=sql.prepare(this.query).run(...this.args as never[]);return{success:true,meta:{changes:Number(r.changes)}};}}
+const objects=new Map<string,{bytes:ArrayBuffer;httpMetadata:Record<string,string>}>();
+export const env={DB:{prepare:(q:string)=>new Statement(q),batch:async(stmts:Statement[])=>{sql.exec('BEGIN');try{const out=[];for(const s of stmts)out.push(await s.run());sql.exec('COMMIT');return out;}catch(e){sql.exec('ROLLBACK');throw e;}}},BUCKET:{put:async(key:string,bytes:ArrayBuffer,opt:any)=>{objects.set(key,{bytes,httpMetadata:opt.httpMetadata});},delete:async(key:string)=>{objects.delete(key);},get:async(key:string)=>{const o=objects.get(key);return o?{body:o.bytes,httpMetadata:o.httpMetadata}:null;}}};
