@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#154f48">
+<meta name="description" content="Acceso al aplicativo ACOM de registro y seguimiento de cobros.">
+<title>ACOM · Registro de cobros</title>
+<style>
+:root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#173b35;background:#f2f5f0;font-synthesis:none}
+*{box-sizing:border-box}body{margin:0;min-height:100svh;display:grid;place-items:center;padding:24px}
+main{width:min(100%,640px);background:#fff;border:1px solid #dce5de;border-radius:24px;padding:clamp(28px,7vw,56px);box-shadow:0 20px 70px #173b3510}
+.logo{display:inline-block;background:#e6efde;border-radius:10px;padding:8px 12px;font-weight:800;letter-spacing:.12em;font-size:14px}
+.eyebrow{margin:28px 0 10px;text-transform:uppercase;letter-spacing:.12em;font-size:12px;font-weight:700;color:#5b7568}
+h1{font-size:clamp(32px,6vw,44px);line-height:1.08;letter-spacing:-.04em;margin:0 0 20px}
+p{color:#54675f;line-height:1.65;margin:0 0 24px}
+.button{display:inline-flex;align-items:center;justify-content:center;width:100%;background:#154f48;color:#fff;padding:17px 22px;border-radius:12px;text-decoration:none;font-weight:700}
+.button:hover{background:#0c3e37}.button:focus-visible,a:focus-visible{outline:3px solid #d2a640;outline-offset:4px}
+.note{margin:18px 0 0;font-size:14px}footer{border-top:1px solid #e5ebe6;margin-top:32px;padding-top:20px;font-size:13px;color:#62776a}
+footer a{color:#154f48}ul{padding-left:20px;color:#54675f;line-height:1.9;margin:0 0 28px}
+</style>
+</head>
+<body>
+<main>
+<span class="logo">ACOM</span>
+<div class="eyebrow">Animales de Compañía</div>
+<h1>Registro de cobros</h1>
+<p>Accede al registro central para informar un cobro y dar seguimiento a su rendición.</p>
+<ul><li>Lectura de QR de factura o ingreso manual.</li><li>Registro del pago y su comprobante.</li><li>Consulta y descarga de Excel según tu rol.</li></ul>
+<a class="button" href="https://acom-registro-cobros.mv-hiyagon.chatgpt.site">Abrir aplicativo →</a>
+<p class="note">El aplicativo se abre en su servidor y requiere iniciar sesión con una cuenta autorizada. Esta página no recibe ni guarda datos de cobros.</p>
+<footer>La sincronización automática con el Excel de Drive está pendiente de configurar.<br><a href="https://github.com/StephHiyagon/seguimiento-cobros-acom">Ver repositorio en GitHub</a></footer>
+</main>
+</body>
+</html>
