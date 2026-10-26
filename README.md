@@ -2,7 +2,7 @@
 
 [**Abrir aplicativo de prueba en GitHub Pages**](https://stephhiyagon.github.io/seguimiento-cobros-acom/)
 
-Esta prueba se ejecuta completamente en el navegador desde GitHub Pages. No utiliza Sites ni requiere iniciar sesión con Google o ChatGPT.
+Esta prueba se ejecuta completamente en el navegador desde GitHub Pages. 
 
 1. Elige “CTC de prueba 1” y entra.
 2. Escanea el QR desde una foto o la cámara, o completa la factura manualmente.
